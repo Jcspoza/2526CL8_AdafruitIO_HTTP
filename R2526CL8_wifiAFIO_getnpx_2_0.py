@@ -92,9 +92,9 @@ display.show()
 if codigoRespuesta == 200:
     hexRGB = respuesta.json()['value'] # numero en formato hexadecimal '#ff00ff'
     print(f'Valor del color en hexadecimal {hexRGB}')
-    red = int(hexRGB[1:3],16) # convierte los primeros 16 bit en entero
-    green = int(hexRGB[3:5],16) # convierte los primeros 16 bit en entero
-    blue = int(hexRGB[5:7],16) # convierte los primeros 16 bit en entero
+    red = int(hexRGB[1:3],16) # convierte los primeros 8 bits/ 2 letras hex en entero
+    green = int(hexRGB[3:5],16) # convierte los segundos 8 bits/ 2 letras hex en entero
+    blue = int(hexRGB[5:7],16) # convierte los terceros 8 bits/ 2 letras hex en entero
     display.text('Red = ' + str(red), 0, 30, 1)
     display.text(hex(red), 90, 30, 1)
     display.text('Green = ' + str(green), 0, 40, 1)
