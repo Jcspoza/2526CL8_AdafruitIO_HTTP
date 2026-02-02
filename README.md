@@ -74,14 +74,16 @@ Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com
 
 ### Tabla resumen de programas
 
-| Programa                                             | Lenguaje | Objetivo de Aprendizaje                                         | Hw adicional                              |
-| ---------------------------------------------------- | -------- | --------------------------------------------------------------- | ----------------------------------------- |
-| [secrets_vacio.py](secrets_vacio.py)                 | uPy      | Ver clase 7 de 2025-2026                                        | solo PICO W                               |
-| [do_connect.py](do_connect.py)                       | uPY      | Ver clase 7 2025-2026                                           | solo PICO W                               |
-| [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py) | uPy      | Ver clase 7, uso simple de consulta de una API con GET en HTTP  | PICO W /2W + display SH1106               |
-| [Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)           | uPY      | Test básico del display SH1106 + bus I2C + direccionamiento I2C | PICO W /2W + display SH1106 GPIO 4 & 5    |
-| [Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py)               | uPy      | Test básico de la tira neopixel x 8                             | PICO W /2W + tira x 8 neopixels en GPIO14 |
-|                                                      | uPy      |                                                                 |                                           |
+| Programa                                               | Lenguaje | Objetivo de Aprendizaje                                         | Hw adicional                              |
+| ------------------------------------------------------ | -------- | --------------------------------------------------------------- | ----------------------------------------- |
+| [secrets_vacio.py](secrets_vacio.py)                   | uPy      | Ver clase 7 de 2025-2026                                        | solo PICO W                               |
+| [do_connect.py](do_connect.py)                         | uPY      | Ver clase 7 2025-2026                                           | solo PICO W                               |
+| [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py)   | uPy      | Ver clase 7, uso simple de consulta de una API con GET en HTTP  | PICO W /2W + display SH1106               |
+| [Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)             | uPY      | Test básico del display SH1106 + bus I2C + direccionamiento I2C | PICO W /2W + display SH1106 GPIO 4 & 5    |
+| [Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py)                 | uPy      | Test básico de la tira neopixel x 8                             | PICO W /2W + tira x 8 neopixels en GPIO14 |
+| [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py) | uPy      |                                                                 |                                           |
+|                                                        |          |                                                                 |                                           |
+|                                                        |          |                                                                 |                                           |
 
 ### Recomendaciones de estudio despues de la clase
 
