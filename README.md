@@ -213,7 +213,7 @@ Este programa añade sobre get 2_0 :
 
 No se ejecuta mas que 1 vez. En un caso real se ejecutaría en bucle cada minuto por ejemplo
 
-![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\Foto_ejemplo1b.jpg)
+![](./Foto_ejemplo1b.jpg)
 
 ---- FIN ACTUALIZACION ---
 
