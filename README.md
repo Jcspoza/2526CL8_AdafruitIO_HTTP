@@ -186,7 +186,7 @@ Programa de test adaptado a neopixel de 8 pixeles
 
 8. Con la web abierta en el dashboard ejecutamos el test de GET paras ese feed
 
-9. [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)
+9. Estudiar / Explicar el programa [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)
 
 Veremos algo asi en la consola
 
@@ -199,7 +199,23 @@ Valor del color en hexadecimal #dff805
 
 Por  ultimo, probamos a cambiar valores en la web de Adafruit y ver como los lee el programa
 
-### Ejecutar el ejemplo y ver como cambia el color
+### Ejecutar el ejemplo: 'R2526CL8_wifiAFIO_getnpx_2_0.py' y ver como cambia el color
+
+[R2526CL8_wifiAFIO_getnpx_2_0.py](R2526CL8_wifiAFIO_getnpx_2_0.py)
+
+Este programa añade sobre get 2_0 :
+
+* El objeto neopixel
+
+* Convertir el valor leído de 24 bits en 3 porciones de 8 bits --> se explicara en clase
+
+* Asignar ese color al todos los pixeles del la tira ( no usa el direccionamiento de cada pixel) 
+
+No se ejecuta mas que 1 vez. En un caso real se ejecutaría en bucle cada minuto por ejemplo
+
+![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\Foto_ejemplo1b.jpg)
+
+---- FIN ACTUALIZACION ---
 
 ## Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet : enviar temperatura y humedad desde DHT11
 
