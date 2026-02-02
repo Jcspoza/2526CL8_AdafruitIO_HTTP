@@ -23,8 +23,6 @@ Indice evolutivo del las clases del taller + libros y webs de referencia:
 - Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet: enviar temperatura y humedad desde DHT11
 
 - Preguntas sobre la Clase 8
-  
-  --- fin actualizacion ---
 
 ## Propósito
 
@@ -76,14 +74,14 @@ Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com
 
 ### Tabla resumen de programas
 
-| Programa                                                         | Lenguaje | Objetivo de Aprendizaje | Hw adicional   |
-| ---------------------------------------------------------------- | -------- | ----------------------- | -------------- |
-| [BMMR_CL19s_wifi_connect_0_1.py](BMMR_CL19s_wifi_connect_0_1.py) | uPy      |                         | no solo PICO W |
-|                                                                  | uPY      |                         | solo PICO W    |
-|                                                                  | uPy      |                         |                |
-|                                                                  | uPY      |                         |                |
-|                                                                  | uPy      |                         |                |
-|                                                                  | uPy      |                         |                |
+| Programa                                             | Lenguaje | Objetivo de Aprendizaje                                        | Hw adicional                |
+| ---------------------------------------------------- | -------- | -------------------------------------------------------------- | --------------------------- |
+| [secrets_vacio.py](secrets_vacio.py)                 | uPy      | Ver clase 7 de 2025-2026                                       | solo PICO W                 |
+| [do_connect.py](do_connect.py)                       | uPY      | Ver clase 7 2025-2026                                          | solo PICO W                 |
+| [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py) | uPy      | Ver clase 7, uso simple de consulta de una API con GET en HTTP | PICO W /2W + display SH1106 |
+|                                                      | uPY      |                                                                |                             |
+|                                                      | uPy      |                                                                |                             |
+|                                                      | uPy      |                                                                |                             |
 
 ### Recomendaciones de estudio despues de la clase
 
@@ -95,8 +93,6 @@ Este es el montaje completo, iremos usándolo progresivamente
 
 La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Ohm
 
-
-
 ![](./pico_sh1106_npx_DHT11_bb.png)
 
 ## Introducción Teórica al HTTP (simplificada)
@@ -105,9 +101,21 @@ Sigamos el tutorial
 
 [MicroPython: HTTP GET Requests with ESP32/ESP8266 | Random Nerd Tutorials](https://randomnerdtutorials.com/micropython-http-get-requests-esp32-esp8266/)
 
-### Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
+## Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
 
-El programas
+### Test del display SH1106
+
+Ver como hacer el test en Clase 7 o con mas detalle en
+
+### [2425CL10_DisplayGrafSH1106](https://github.com/Jcspoza/2425CL10_DisplayGrafSH1106)
+
+Programa de Test del display SH1106 , que tambien prueba le bus I2C y errores de direccionamiento
+
+[Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)
+
+
+
+### El programa Tutorial de consultar por API nastro 2_0
 
 [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py)
 
@@ -150,6 +158,24 @@ Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com
 
 ### Test del neopixel
 
+Ver que es un neopixel en los tutoriales de Sunfounder 
+
+[WS2812 RGB 8 LEDs Strip &mdash; SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W documentation](https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/component/component_ws2812.html)
+
+Programa de test adaptado a neopixel de 8 pixeles 
+
+[Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py)
+
+### Test del display SH1106
+
+Ver como hacer el test en Clase 7 o con mas detalle en 
+
+### [2425CL10_DisplayGrafSH1106](https://github.com/Jcspoza/2425CL10_DisplayGrafSH1106)
+
+Programa de Test
+
+[Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)
+
 ### Configurar el Dashboard en Adafruit IO
 
 ### Ejecutar un test GET genérico con Adafruit
@@ -166,4 +192,4 @@ Sección para que los alumnos pregunten sus dudas durante la clase
 
 ---
 
-TO DO :  
+### TO DO :
