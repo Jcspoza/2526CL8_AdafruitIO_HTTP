@@ -32,7 +32,8 @@ NUMERO_PIXELS = 8
 NEOPIXEL_PIN = 14
 tira = NeoPixel(Pin(NEOPIXEL_PIN),NUMERO_PIXELS )
 
-# 2.1- configuramos pizarra delcontrolador a rojo 
+# 2. Escribe por orden diferentes colores en los neopixeles
+# Rojo, verde, azul, amarillo,...
 tira[0] = (BRILLO, 0, 0)
 tira.write()
 sleep(ESPERA)
@@ -59,9 +60,9 @@ tira.write()
 sleep(ESPERA)
 
 
-# 2.4- configuramos pizarra delcontrolador a todos apagados
+# 2.4- configuramos pizarra del controlador a todos apagados
 tira.fill((0, 0, 0))
 
-# 3.4 Volcamso pizarra de ucontrolador a la del dispositivo y Fin
+# 3.4 Volcamos pizarra de ucontrolador a la del dispositivo y Fin
 tira.write()
 
