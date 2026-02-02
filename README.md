@@ -172,15 +172,15 @@ Programa de test adaptado a neopixel de 8 pixeles
 
 2. Creo un feed para el neopixel y lo nombro como 'rgb-value-24-bits' ( por ejemplo)
 
-3. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\Feeds_AFIO_jcsp.png)
+3. ![](./Feeds_AFIO_jcsp.png)
 
 4. Miro y copio mi clave secreta
 
-5. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\claveAFIO.png)
+5. ![](./claveAFIO.png)
 
 6. Configuro un Dashboard para ese feed
 
-7. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\dashboard_RGB.png)
+7. ![](./dashboard_RGB.png)
 
 8. Con la web abierta en el dashboard ejecutamos el test de GET paras ese feed
 
