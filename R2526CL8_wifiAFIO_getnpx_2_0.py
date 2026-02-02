@@ -1,0 +1,111 @@
+# Taller Programación y Robótica en CMM BML – 2024 -2025 - Clase wifi
+# Programa: Test de get en Adafruit 
+# Hardware platform: Pico W solamente
+# Librerias : sh1106.py
+# Ref librerias: https://github.com/robert-hh/SH1106
+# Fecha JCSP 2023 02 06
+# Licencia : CC BY-NC-SA 4.0
+# 1.0 : basado en nastro_2_0
+
+from os import uname
+# Informative block - start
+p_keyOhw = "I2C en GPIO 4&5 = SDA0 & SCL0 400khz + npx gpio14"
+p_project = "Test GET en adafruit: feed 'rgb-value-24-bits'"
+p_version = "1.0"
+p_library = "SH1106  @robert-hh + requests + neopixel"
+print(f"uPython version: {uname()[3]} ")
+print(f"uC: {uname()[4]} - Key other HW: {p_keyOhw}")
+print(f"Program: {p_project} - Version: {p_version}")
+print(f"Key Library: {p_library}")
+
+from machine import Pin, I2C
+import sh1106
+from do_connect import *
+import requests
+from neopixel import NeoPixel
+
+# 0.0 - Constates y varaibles globales
+# para el objeto Display
+WIDTH =128 
+HEIGHT= 64
+FREQ = 400_000   # Try lowering this value in case of "Errno 5"
+
+# 0.3 - Constantes para Adafruit IoT
+# 'AFIOT_USERNAME' was imported with secrets in module do_connect, use secrets['AFIOT_USERNAME']
+# 'AFIOT_KEY' was imported with secrets in module do_connect, use secrets['AFIOT_KEY']
+ENCABEZADO = {'X-AIO-Key': secrets['AFIOT_KEY'], 'Content-Type': 'application/json'}
+NOMBREFEED = "rgb-value-24-bits"
+
+# 1.1- Creacion del objeto display,
+# primero el objeto i2c para comunicarnos con el display
+i2c = I2C(0, sda = Pin(4), scl = Pin(5), freq = FREQ)
+# luego el display
+display = sh1106.SH1106_I2C(WIDTH,
+                            HEIGHT,
+                            i2c,
+                            res = None,
+                            addr = 0x3c,
+                            rotate = 0) # valores 0, 90, 180, 270
+display.sleep(False)
+display.fill(0) # toda la pantalla en negro
+# Fin de la inicializacion del display
+
+# 1.2- Creacion del objeto neopixel
+NUMERO_PIXELS = 8
+NEOPIXEL_PIN = 14
+tira = NeoPixel(Pin(NEOPIXEL_PIN),NUMERO_PIXELS )
+# apagamos el neopixel
+tira.fill((0,0,0)) # rojo a 0, verde a 0 y azul a 0
+tira.write() # escribimos en neopixel
+
+# PROGRAMA PRINCIPAL
+# 2- Nos conectamos a Internet
+# mostramos por el display que empieza la conexion al wifi
+display.text('T.AdafruitIO npx', 0, 0, 1)
+display.show()
+# conectamos la Pico W / 2W a Internet
+ip = do_connect()
+# si ha sido exitoso mostramos la ip
+# ATENCION : este es un progrma simple y no maneja errores de conexion,
+# solo la excepcion que muestra do_connect
+display.text(ip, 0, 10, 1)
+display.show()
+
+# 3- Preguntamos en el espacio propio de Adafruti IO con HTTP
+display.text('GET...', 0, 20, 1)
+display.show()
+# 3.1 componemeos en 'end point'
+urlAFIO = "https://io.adafruit.com/api/v2/" + secrets['AFIOT_USERNAME'] + "/feeds/" + NOMBREFEED + "/data/last"
+respuesta = requests.get(urlAFIO, headers = ENCABEZADO)
+
+# 4 - Mostramos la respuesta: formatamos y la mostramos en el display
+# 4.1 - primero el status code
+codigoRespuesta = respuesta.status_code
+display.text(str(codigoRespuesta), 100, 20, 1)
+display.show()
+
+# 4.2 Ahora la respuesta en si
+# la respuesta viene en un formato tipo JSON que convertimos a dicionario Python
+# con el metodo ya incluido en requests 'json'
+# Para volcar la respuesta hay que conocer su estructura -> ver la ayuda de la API
+
+if codigoRespuesta == 200:
+    hexRGB = respuesta.json()['value'] # numero en formato hexadecimal '#ff00ff'
+    print(f'Valor del color en hexadecimal {hexRGB}')
+    red = int(hexRGB[1:3],16) # convierte los primeros 16 bit en entero
+    green = int(hexRGB[3:5],16) # convierte los primeros 16 bit en entero
+    blue = int(hexRGB[5:7],16) # convierte los primeros 16 bit en entero
+    display.text('Red = ' + str(red), 0, 30, 1)
+    display.text(hex(red), 90, 30, 1)
+    display.text('Green = ' + str(green), 0, 40, 1)
+    display.text(hex(green), 90, 40, 1)
+    display.text('Blue = ' + str(blue), 0, 50, 1)
+    display.text(hex(blue), 90, 50, 1)
+    display.show()
+    # volcamos color a neopixel
+    tira.fill((red,green,blue))
+    tira.write() # escribimos en neopixel
+else:
+    display.text('Error de HTTP', 0, 30, 1)
+    display.text(respuesta.reason.decode('utf-8'), 0, 40, 1)
+    display.show()
