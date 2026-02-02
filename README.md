@@ -14,11 +14,13 @@ Indice evolutivo del las clases del taller + libros y webs de referencia:
 
 - Introducción Teórica al HTTP (simplificada) 
 
+- Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
+
 - Configuración de la cuenta Adafruit y 1ros pasos : feeds y dashboard
 
-- Ejemplo de uso 1: obtener datos / instrucciones desde Internet --> Pico W/2W
+- Ejemplo de uso 1: obtener datos / instrucciones desde Internet --> Pico W/2W: leer color neopixel
 
-- Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet
+- Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet: enviar temperatura y humedad desde DHT11
 
 - Preguntas sobre la Clase 8
   
@@ -40,15 +42,21 @@ Mas poderoso es usar **servicios en al nube preconfigurados que permiten subir n
 
 1. Servicio de Adafruit IO - darse de alta y configurar 
    
-   El tutorial de SF 
+   1.A) El tutorial de SF 
 
 [8.3 Temperature and Humidity Monitoring via @AdafruitIO &mdash; SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W documentation](https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/pyproject/iotproject/3-adafruitio.html)
 
 **es confuso** porque mezcla HTTP y MQTT .: NO RECOMIENDO SEGUIRLO, <u>salvo su parte 2 de configuración del servicio de Adafruit IO</u>
 
-que se puede también aprender en el tutorial ( que es mejor que el de SF)
+1.B) Tutorial en castellano, ver el hasta que cuenta el codigo, que es para un neopixel pero lo realiza de forma diferente
+
+[Raspberry Pi Pico W con Adafruit IO- control de neopixel codigo en micropython](https://youtu.be/Hee9fIwVGFs?si=nDDjqIZfNCCiUJM4)
+
+1.C) y otro Tutorial ( que es mejor que el de SF)
 
 [Upload Sensor Data to Adafruit IO with ESP32 and MicroPython | GPIO.CC Learning](https://gpiocc.github.io/learn/micropython/esp/2020/05/23/martin-ku-upload-sensor-data-to-adafruit-io-with-esp32-and-micropython.html)
+
+o este otro tutorial
 
 2. Explicación de HTTP Una buen y sencilla explicación del HTTP es 
 
@@ -83,15 +91,19 @@ Leer / visualizar los tutoriales indicados
 
 ## Montaje HW
 
+Este es el montaje completo, iremos usándolo progresivamente 
+
+La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Ohm
+
+
+
+![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\pico_sh1106_npx_DHT11_bb.png)
+
 ## Introducción Teórica al HTTP (simplificada)
 
 Sigamos el tutorial 
 
 [MicroPython: HTTP GET Requests with ESP32/ESP8266 | Random Nerd Tutorials](https://randomnerdtutorials.com/micropython-http-get-requests-esp32-esp8266/)
-
-
-
-
 
 ### Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
 
@@ -112,6 +124,39 @@ Los explicare paso a paso..... y además explicare de forma breve y simplificada
 - Tipo de datos JSON devuelto por el servidor
 
 Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com/es/tutorial/json-data-python)
+
+## Configuración de la cuenta Adafruit y 1ros pasos : feeds y dashboard
+
+--> Tutorial en castellano, ver el hasta que cuenta el codigo, que es para un neopixel pero lo realiza de forma diferente
+
+[Raspberry Pi Pico W con Adafruit IO- control de neopixel codigo en micropython](https://youtu.be/Hee9fIwVGFs?si=nDDjqIZfNCCiUJM4)
+
+1. Crear un usuario
+
+2. Suscribir plan básico. El plan básico es Gratis: permite crear hasta 10 feeds y 5 Dashboards. Los feed son el elemento limitante, feed = elemento hw básico , por
+   ejemplo, led de 1 color
+
+3. Crear los “feeds” que necesites en función del proyecto, en nuestro proyecto serán 3 = 
+   
+   + 1 para el neopixel ( no usamos el direccionamiento de cada neopixel individual)
+   
+   + 2 para temperatura y humedad del sensor DHT 11
+
+4. Componer un Dashboard con los “feeds”, eligiendo el tipo de control o visualizador on/of, slide, aguja, etc
+
+5. Copiar clave, nombre de usuario y nombres de feeds, que necesitaremos en nuestro programa
+
+## Ejemplo de uso 1: obtener datos / instrucciones desde Internet --> Pico W/2W : leer color neopixel
+
+### Test del neopixel
+
+### Configurar el Dashboard en Adafruit IO
+
+### Ejecutar un test GET genérico con Adafruit
+
+### Ejecutar el ejemplo y ver como cambia el color
+
+## Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet : enviar temperatura y humedad desde DHT11
 
 ---
 
