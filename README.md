@@ -97,7 +97,7 @@ La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Oh
 
 
 
-![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\pico_sh1106_npx_DHT11_bb.png)
+![](./pico_sh1106_npx_DHT11_bb.png)
 
 ## Introducción Teórica al HTTP (simplificada)
 
