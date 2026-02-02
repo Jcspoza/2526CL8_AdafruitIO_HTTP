@@ -168,6 +168,35 @@ Programa de test adaptado a neopixel de 8 pixeles
 
 ### Ejecutar un test GET genérico con Adafruit
 
+1. Entro en mi cuenta de Adafruit IO [IO - Adafruit](https://io.adafruit.com/jcspoza/overview)
+
+2. Creo un feed para el neopixel y lo nombro como 'rgb-value-24-bits' ( por ejemplo)
+
+3. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\Feeds_AFIO_jcsp.png)
+
+4. Miro y copio mi clave secreta
+
+5. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\claveAFIO.png)
+
+6. Configuro un Dashboard para ese feed
+
+7. ![](C:\Users\josec\OneDrive\Documentos\GitHub\2526CL8_AdafruitIO_HTTP\dashboard_RGB.png)
+
+8. Con la web abierta en el dashboard ejecutamos el test de GET paras ese feed
+
+9. [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)
+
+Veremos algo asi en la consola
+
+```
+Program: Test GET en adafruit: feed 'rgb-value-24-bits' - Version: 1.0
+Key Library: SH1106  @robert-hh + requests
+CONNECTED-STAT_Connected
+Valor del color en hexadecimal #dff805
+```
+
+Por  ultimo, probamos a cambiar valores en la web de Adafruit y ver como los lee el programa
+
 ### Ejecutar el ejemplo y ver como cambia el color
 
 ## Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet : enviar temperatura y humedad desde DHT11
