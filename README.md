@@ -101,6 +101,8 @@ Sigamos el tutorial
 
 [MicroPython: HTTP GET Requests with ESP32/ESP8266 | Random Nerd Tutorials](https://randomnerdtutorials.com/micropython-http-get-requests-esp32-esp8266/)
 
+que aunque esta en ingles, es el que se adapta a un microcontrolador
+
 ## Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
 
 ### Test del display SH1106
@@ -152,7 +154,7 @@ Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com
 
 5. Copiar clave, nombre de usuario y nombres de feeds, que necesitaremos en nuestro programa
 
-## Ejemplo de uso 1: obtener datos / instrucciones desde Internet --> Pico W/2W : leer color neopixel
+## <u>Ejemplo de uso 1</u>: obtener datos / instrucciones desde Internet --> Pico W/2W : leer color neopixel
 
 ### Test del neopixel
 
@@ -163,10 +165,6 @@ Ver que es un neopixel en los tutoriales de Sunfounder
 Programa de test adaptado a neopixel de 8 pixeles 
 
 [Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py) 
-
-
-
-### Configurar el Dashboard en Adafruit IO
 
 ### Ejecutar un test GET genérico con Adafruit
 
