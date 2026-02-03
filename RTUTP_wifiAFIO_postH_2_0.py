@@ -1,5 +1,5 @@
 # Taller Programación y Robótica en CMM BML – 2024 -2025 - Clase wifi
-# Programa: Test de post en Adafruit 
+# Programa: Test de post en Adafruit - Humedad
 # Hardware platform: Pico W solamente
 # Librerias : sh1106.py
 # Ref librerias: https://github.com/robert-hh/SH1106
@@ -10,7 +10,7 @@
 from os import uname
 # Informative block - start
 p_keyOhw = "I2C en GPIO 4&5 = SDA0 & SCL0 400khz"
-p_project = "Test POST en adafruit: feed 'dht11temperatura'"
+p_project = "Test POST en adafruit: feed 'dht11humedad'"
 p_version = "1.0"
 p_library = "SH1106  @robert-hh + requests"
 print(f"uPython version: {uname()[3]} ")
@@ -34,7 +34,7 @@ FREQ = 400_000   # Try lowering this value in case of "Errno 5"
 # 'AFIOT_USERNAME' was imported with secrets in module do_connect, use secrets['AFIOT_USERNAME']
 # 'AFIOT_KEY' was imported with secrets in module do_connect, use secrets['AFIOT_KEY']
 ENCABEZADO = {'X-AIO-Key': secrets['AFIOT_KEY'], 'Content-Type': 'application/json'}
-NOMBREFEED = "dht11temperatura"
+NOMBREFEED = "dht11humedad"
 
 # 1- Creacion del objeto display,
 # primero el objeto i2c para comunicarnos con el display
@@ -53,7 +53,7 @@ display.fill(0) # toda la pantalla en negro
 # PROGRAMA PRINCIPAL
 # 2- Nos conectamos a Internet
 # mostramos por el display que empieza la conexion al wifi
-display.text('T.AdafruitIO post', 0, 0, 1)
+display.text('T.Adaf.IO post', 0, 0, 1)
 display.show()
 # conectamos la Pico W / 2W a Internet
 ip = do_connect()
@@ -63,18 +63,18 @@ ip = do_connect()
 display.text(ip, 0, 10, 1)
 display.show()
 
-# 3- Preguntamos el valor de POST a subir a Tempratura
-temperatura = float(input('Di un valor de temperatura entre 0º y 50º'))
-Temp2d = {'value': round(temperatura, 2)}
-display.text('Temp. = ' + str(round(temperatura, 2)), 0, 20, 1)
+# 3- Preguntamos el valor de POST a subir a Humedad
+Humedad = int(input('Di un valor de humedad entre 0% y 100%'))
+Hum = {'value': Humedad}
+display.text('Hum% = ' + str(Humedad), 0, 20, 1)
 display.show()
 
 # 4- Preguntamos en el espacio propio de Adafruti IO con HTTP
-display.text('POST..', 0, 30, 1)
+display.text('POST..Hum', 0, 30, 1)
 display.show()
 # 3.1 componemeos en 'end point'
 urlAFIO = "https://io.adafruit.com/api/v2/" + secrets['AFIOT_USERNAME'] + "/feeds/" + NOMBREFEED + "/data"
-respuesta = requests.post(urlAFIO, headers = ENCABEZADO, data=ujson.dumps(Temp2d))
+respuesta = requests.post(urlAFIO, headers = ENCABEZADO, data=ujson.dumps(Hum))
 
 # 4 - Mostramos la respuesta: formatamos y la mostramos en el display
 # 4.1 - primero el status code

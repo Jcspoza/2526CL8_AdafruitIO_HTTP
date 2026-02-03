@@ -1,10 +1,10 @@
-# 2526_CL8 uP: Uso del servicio Adafruit IO con HTTP
+# 2526_CL8 uP: Uso del servicio Adafruit IO con HTTP - borrador avanzado
 
 Indice evolutivo del las clases del taller + libros y webs de referencia:
 
 [GitHub - Jcspoza/2526_PyR_Index: Curso Programación y Robotica 2025 2026 - CMM BML](https://github.com/Jcspoza/2526_PyR_Index)
 
-## Clase 8  (en 2425 Clase 11) - Indice - 90 minutos
+## Indice - ( 2 a 3 dias de clase)
 
 - Propósito
 
@@ -28,7 +28,15 @@ Indice evolutivo del las clases del taller + libros y webs de referencia:
 
 ( Sigue desde la clase 7 de 2025 - 2026)
 
-Los montajes HW + SW robóticos enseguida, dentro de la linea de aprendizaje, empiezan a 'trocearse' y se llega a tener de los 2 pedazos, uno de ellos en la 'nube'. Este pedazo en al nube se puede programar desde cero ( como por ejemplo servidor web local) , pero lo normal es que se usen servicios en la nube pre-configurados
+Los montajes HW + SW robóticos muy pronto dentro de la linea de aprendizaje, empiezan a 'trocearse' y por necesidades de utilidad, uno de esos pedazos esta en la 'nube'. Este pedazo en l nube se puede programar desde cero ( como por ejemplo servidor web local) , pero lo normal es que se usen servicios en la nube pre-configurados, que con algo de configuracion sirven al proposito que queramos, como por ejemplo:
+
++ Ver valores de un sensor o una alarma
+
++ Encender o apagar una luz, motor,, etc.
+
++ Enviarnos un whatsapp o un mail , si un sensor pasa de cierto valor
+
++ etc.
 
 En **numastro** lo que hacíamos era preguntar a un servicio en el nube y actuar en consecuencia a la informacion ( solo la mostrábamos en el ejemplo, pero hubiéramos podido tomar decisiones de programa con la informacion.
 
@@ -91,6 +99,20 @@ Leer / visualizar los tutoriales indicados
 
 ## Montaje HW
 
+### Materiales
+
++ PICO W o 2W ( no vale la PICO sin wifi)
+
++ Display tipo OLED H1106 128 x 64 monocromo conexión  I2C ( no en el kit Sunfounder), se puede sustituir con relativa facilidad por un display SSD1306 mas usual, pero mas pequeño
+
++ Neopixel x8 conexión de datos de 1 hilo - [WS2812 RGB 8 LEDs Strip &mdash; SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W documentation](https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/component/component_ws2812.html)
+
++ Sensor de temperatura y Humedad DHT11 conexión de datos de  1 hilo - [DHT11 Humiture Sensor &mdash; SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W documentation](https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/component/component_humiture.html)
+
++ Resistencia para pull-up de linea de datos de DHT11 4,7kohm o 10Kohm [Resistor &mdash; SunFounder Pico 2 W Starter Kit for Raspberry Pi Pico 2 W documentation](https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/component/component_resistor.html)
+
+### Esquema
+
 Este es el montaje completo, iremos usándolo progresivamente 
 
 La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Ohm
@@ -99,11 +121,89 @@ La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Oh
 
 ## Introducción Teórica al HTTP (simplificada)
 
-Sigamos el tutorial 
+Podemos seguir el tutorial 
 
 [MicroPython: HTTP GET Requests with ESP32/ESP8266 | Random Nerd Tutorials](https://randomnerdtutorials.com/micropython-http-get-requests-esp32-esp8266/)
 
-que aunque esta en ingles, es el que se adapta a un microcontrolador
+que aunque esta en ingles, es el que se adapta a un microcontrolador. O leer esta simple explicacion
+
+### ¿Qué es HTTP realmente?
+
+HTTP (*HyperText Transfer Protocol*) es un **protocolo de comunicación** que define cómo un cliente (normalmente un navegador) y un servidor intercambian información.
+
+Su funcionamiento se basa en tres ideas clave:
+
+#### 1. **Modelo cliente–servidor**
+
+- El **cliente** envía una *petición* (request).
+
+- El **servidor** responde con una *respuesta* (response).
+
+#### 2. **Métodos**
+
+Los más comunes:
+
+- **GET** → pedir información.
+
+- **POST** → enviar información.
+
+- **PUT / DELETE** → modificar o borrar recursos.
+
+#### 3. **Mensajes estructurados**
+
+Una petición HTTP tiene:
+
+- **Línea de petición** (GET /ruta)
+
+- **Cabeceras** (headers)
+
+- **Cuerpo** (body) — opcional
+
+Una respuesta HTTP tiene:
+
+- **Código de estado** (200, 404…)
+
+- **Cabeceras**
+
+- **Cuerpo** (HTML, JSON, texto, etc.)
+
+### 🌐 ¿Cómo se adapta HTTP a un microcontrolador como la Pico W?
+
+La Raspberry Pi Pico W **no ejecuta un sistema operativo**, pero sí puede:
+
+- Conectarse a WiFi
+
+- Abrir sockets TCP
+
+- Implementar protocolos como HTTP
+
+HTTP funciona **encima de TCP**, y la Pico W sí puede manejar TCP, así que el truco consiste en implementar una versión *ligera* del protocolo.
+
+#### 🛠️Pico W como **servidor** HTTP
+
+No lo voy a desarrollar, de momento
+
+#### 📤 Pico W como **cliente** HTTP
+
+La Pico W también puede **enviar** peticiones HTTP, por ejemplo para consumir una API REST:
+
+```
+import urequests
+
+r = urequests.get("https://api.github.com")
+print(r.text)
+r.close()
+```
+
+Aquí la librería `urequests` simplifica todo el proceso:
+
+- Abre el socket
+
+- Envía la petición GET
+
+- Recibe la respuesta
+
+- Te entrega el cuerpo en texto o JSON
 
 ## Recordar : RTUTP_wifi_nastro_2_0.py, aplicación con HTTP
 
@@ -113,7 +213,7 @@ Ver como hacer el test en Clase 7 o con mas detalle en
 
 ### [2425CL10_DisplayGrafSH1106](https://github.com/Jcspoza/2425CL10_DisplayGrafSH1106)
 
-Programa de Test del display SH1106 , que tambien prueba le bus I2C y errores de direccionamiento
+Programa de Test del display SH1106 , que también prueba le bus I2C y errores de direccionamiento
 
 [Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)
 
@@ -207,7 +307,7 @@ Este programa añade sobre get 2_0 :
 
 * El objeto neopixel
 
-* Convertir el valor leído de 24 bits en 3 porciones de 8 bits --> se explicara en clase
+* Convertir el valor leído de 24 bits / 6 cifras hexadecimales en 3 porciones de 8 bits --> se explicara en clase
 
 * Asignar ese color al todos los pixeles del la tira ( no usa el direccionamiento de cada pixel) 
 
@@ -221,10 +321,12 @@ No se ejecuta mas que 1 vez. En un caso real se ejecutaría en bucle cada minuto
 
 ---
 
-## Preguntas sobre la Clase 8 - 10 minutos
+## Preguntas sobre la Clase 8
 
 Sección para que los alumnos pregunten sus dudas durante la clase
 
 ---
 
 ### TO DO :
+
++ Ejemplo 3 sumando ejemplos 1 y 2 : control de color de neopixel y mostrar valores de temperatura y humedad
