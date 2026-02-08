@@ -83,13 +83,13 @@ display.text(str(codigoRespuesta), 100, 30, 1)
 display.show()
 
 # 4.2 Ahora la respuesta en si
-# la respuesta viene en un formato tipo JSON que convertimos a dicionario Python
-# con el metodo ya incluido en requests 'json'
-# Para volcar la respuesta hay que conocer su estructura -> ver la ayuda de la API
+# En el caso de un Post - nos interesa unicamente que el codigo fde respeusta sea OK
 
 if codigoRespuesta == 200:
-    pass
+    print(f'Ok de HTTP codigo = {codigoRespuesta}')
 else:
+    # Tratamiento de errores basico
+    print(f'Error de HTTP : {respuesta.reason.decode('utf-8')}')
     display.text('Error de HTTP', 0, 30, 1)
     display.text(respuesta.reason.decode('utf-8'), 0, 40, 1)
     display.show()

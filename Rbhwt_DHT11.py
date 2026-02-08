@@ -16,5 +16,6 @@ while True:
       print(f"Temperature: {temperature:02d}°C   Humidity: {humidity:02d}%")
    except OSError as e:
       print("Failed to read sensor.")
+      print(e)
    # Wait before the next reading
    time.sleep(2)

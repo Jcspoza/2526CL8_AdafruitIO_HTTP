@@ -4,7 +4,7 @@ Indice evolutivo del las clases del taller + libros y webs de referencia:
 
 [GitHub - Jcspoza/2526_PyR_Index: Curso Programación y Robotica 2025 2026 - CMM BML](https://github.com/Jcspoza/2526_PyR_Index)
 
-## Indice - ( 2 a 3 dias de clase)
+## Indice - ( 2 a 3 días de clase)
 
 - Propósito
 
@@ -28,11 +28,11 @@ Indice evolutivo del las clases del taller + libros y webs de referencia:
 
 ( Sigue desde la clase 7 de 2025 - 2026)
 
-Los montajes HW + SW robóticos muy pronto dentro de la linea de aprendizaje, empiezan a 'trocearse' y por necesidades de utilidad, uno de esos pedazos esta en la 'nube'. Este pedazo en l nube se puede programar desde cero ( como por ejemplo servidor web local) , pero lo normal es que se usen servicios en la nube pre-configurados, que con algo de configuracion sirven al proposito que queramos, como por ejemplo:
+Los montajes HW + SW robóticos muy pronto dentro de la linea de aprendizaje, empiezan a 'trocearse' y por necesidades de utilidad, uno de esos pedazos esta en la 'nube'. Este pedazo en l nube se puede programar desde cero ( como por ejemplo servidor web local) , pero lo normal es que se usen servicios en la nube pre-configurados, que con algo de configuración sirven al propósito que queramos, como por ejemplo:
 
 + Ver valores de un sensor o una alarma
 
-+ Encender o apagar una luz, motor,, etc.
++ Encender o apagar una luz, motor, etc.
 
 + Enviarnos un whatsapp o un mail , si un sensor pasa de cierto valor
 
@@ -82,16 +82,19 @@ Ver tutorial [Python JSON Data: Una guía con ejemplos](https://www.datacamp.com
 
 ### Tabla resumen de programas
 
-| Programa                                                           | Lenguaje | Objetivo de Aprendizaje                                           | Hw adicional                                                          |
-| ------------------------------------------------------------------ | -------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [secrets_vacio.py](secrets_vacio.py)                               | uPy      | Ver clase 7 de 2025-2026                                          | solo PICO W                                                           |
-| [do_connect.py](do_connect.py)                                     | uPY      | Ver clase 7 2025-2026                                             | solo PICO W                                                           |
-| [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py)               | uPy      | Ver clase 7, uso simple de consulta de una API con GET en HTTP    | PICO W /2W + display SH1106                                           |
-| [Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)                         | uPY      | Test básico del display SH1106 + bus I2C + direccionamiento I2C   | PICO W /2W + display SH1106 GPIO 4 & 5                                |
-| [Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py)                             | uPy      | Test básico de la tira neopixel x 8                               | PICO W /2W + tira x 8 neopixels en GPIO14                             |
-| [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)             | uPy      | Programa tutorial - ejemplo de get de un feed en Adafruit IO      | PICO W /2W + display SH1106 GPIO 4 & 5                                |
-| [R2526CL8_wifiAFIO_getnpx_2_0.py](R2526CL8_wifiAFIO_getnpx_2_0.py) | uPy      | Programa del ejemplo de uso 1 - Cambiar color de la tira neopixel | PICO W /2W + display SH1106 GPIO 4 & 5 + tira x 8 neopixels en GPIO14 |
-|                                                                    |          |                                                                   |                                                                       |
+| Programa                                                           | Lenguaje | Objetivo de Aprendizaje                                                                                                                 | Hw adicional                                                          |
+| ------------------------------------------------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [secrets_vacio.py](secrets_vacio.py)                               | uPy      | Ver clase 7 de 2025-2026                                                                                                                | solo PICO W                                                           |
+| [do_connect.py](do_connect.py)                                     | uPY      | Ver clase 7 2025-2026                                                                                                                   | solo PICO W                                                           |
+| [RTUTP_wifi_nastro_2_0.py](RTUTP_wifi_nastro_2_0.py)               | uPy      | Ver clase 7, uso simple de consulta de una API con GET en HTTP                                                                          | PICO W /2W + display SH1106                                           |
+| [Rbhwt_sh1106_1_0.py](Rbhwt_sh1106_1_0.py)                         | uPY      | Test básico del display SH1106 + bus I2C + direccionamiento I2C                                                                         | PICO W /2W + display SH1106 GPIO 4 & 5                                |
+| [Rbhwt_npx8_1_0.py](Rbhwt_npx8_1_0.py)                             | uPy      | Test básico de la tira neopixel x 8                                                                                                     | PICO W /2W + tira x 8 neopixels en GPIO14                             |
+| [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)             | uPy      | Programa tutorial - ejemplo de get de un feed en Adafruit IO                                                                            | PICO W /2W + display SH1106 GPIO 4 & 5                                |
+| [R2526CL8_wifiAFIO_getnpx_2_0.py](R2526CL8_wifiAFIO_getnpx_2_0.py) | uPy      | Programa del ejemplo de uso 1 - Cambiar color de la tira neopixel                                                                       | PICO W /2W + display SH1106 GPIO 4 & 5 + tira x 8 neopixels en GPIO14 |
+| [RTUTP_wifiAFIO_post_2_0.py](RTUTP_wifiAFIO_post_2_0.py)           | uPy      | Programa tutorial - ejemplo de POST de un feed en Adafruit IO - Temperatura x 1vez                                                      | PICO W /2W + display SH1106 GPIO 4 & 5                                |
+| [RTUTP_wifiAFIO_postHT_2_0.py](RTUTP_wifiAFIO_postHT_2_0.py)       | uPy      | Programa tutorial - ejemplo de POST de un feed en Adafruit IO - Temperatura y Humedad x 1vez                                            |                                                                       |
+| [R2526_wifiAFIO_postDHT11_2_5.py](R2526_wifiAFIO_postDHT11_2_5.py) | uPy      | Programa del ejemplo de uso 2 - Sube valores de Temperatura y Humedad del sensor DHT11 en <u>bucle</u> + manejo **básico** de errores   | PICO W /2W + display SH1106 GPIO 4 & 5 + DHT11 data pin en GPIO15     |
+| [R2526_wifiAFIO_postDHT11_4_0.py](R2526_wifiAFIO_postDHT11_4_0.py) | uPy      | Programa del ejemplo de uso 2 - Sube valores de Temperatura y Humedad del sensor DHT11 en <u>bucle</u> + **manejo completo de errores** | PICO W /2W + display SH1106 GPIO 4 & 5 + DHT11 data pin en GPIO15     |
 
 ### Recomendaciones de estudio despues de la clase
 
@@ -117,7 +120,7 @@ Este es el montaje completo, iremos usándolo progresivamente
 
 La resistencia de pull-up del DHT11 puede tener valores desde 4.7k ohm a 10 k Ohm
 
-![](./pico_sh1106_npx_DHT11_bb.png)
+![](./doc/pico_sh1106_npx_DHT11_bb.png)
 
 ## Introducción Teórica al HTTP (simplificada)
 
@@ -274,19 +277,21 @@ Programa de test adaptado a neopixel de 8 pixeles
 
 2. Creo un feed para el neopixel y lo nombro como 'rgb-value-24-bits' ( por ejemplo)
 
-3. ![](./Feeds_AFIO_jcsp.png)
+3. 
 
-4. Miro y copio mi clave secreta
+4. ![](./doc/Feeds_AFIO_jcsp.png)
 
-5. ![](./claveAFIO.png)
+5. Miro y copio mi clave secreta
 
-6. Configuro un Dashboard para ese feed
+6. ![](./doc/claveAFIO.png)
 
-7. ![](./dashboard_RGB.png)
+7. Configuro un Dashboard para ese feed
 
-8. Con la web abierta en el dashboard ejecutamos el test de GET paras ese feed
+8. ![](./doc/dashboard_RGB.png)
 
-9. Estudiar / Explicar el programa [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)
+9. Con la web abierta en el dashboard ejecutamos el test de GET para ese feed
+
+10. Estudiar / Explicar el programa [RTUTP_wifiAFIO_get_2_0.py](RTUTP_wifiAFIO_get_2_0.py)
 
 Veremos algo asi en la consola
 
@@ -313,11 +318,108 @@ Este programa añade sobre get 2_0 :
 
 No se ejecuta mas que 1 vez. En un caso real se ejecutaría en bucle cada minuto por ejemplo
 
-![](./Foto_ejemplo1b.jpg)
+![](./doc/Foto_ejemplo1b.jpg)
 
 ---- FIN ACTUALIZACION ---
 
-## Ejemplo de uso 2: subir datos / status desde Pico W/2W --> Internet : enviar temperatura y humedad desde DHT11
+## <u>Ejemplo de uso 2:</u> subir datos / status desde Pico W/2W --> Internet : enviar temperatura y humedad desde DHT11
+
+### Test DHT11
+
+Estudiamos y luego ejecutamos el programa de test Hw basico. El sensor DHT11 es un sensor calibrado de temperatura y humedad con salida digital de 1 cable: no es ni muy preciso ni muy rápido, pero es barato y suficiente para la mayoria de proyectos roboticos. tiene un hemrano mayor el DHT22 que es algo mejor en prestaciones y no hay que cambiar el montaje HW. 
+
+Hay una libreria incorporada al micropython: solo hay que hacer un import 
+
+[Rbhwt_DHT11.py](Rbhwt_DHT11.py)
+
+### Crear y Ejecutar un test Post genérico con adafruit IO
+
+1. Entro en mi cuenta de Adafruit IO [IO - Adafruit](https://io.adafruit.com/jcspoza/overview)
+
+2. Creo un feed para el la temperatura y otro para la humedad que mide el DHT11  y los nombro como 'dht11humedad' y 'dht11temperatura' ( por ejemplo)
+
+3. ![](./doc/Feeds_AFIO_jcsp.png)
+
+4. Miro y copio mi clave secreta
+
+5. ![](./doc/claveAFIO.png)
+
+6. Configuro un Dashboard para estos 2 feed
+
+7. ![](./doc/dashboardTH_RGB.png)
+
+8. Con la web abierta en el dashboard nuevo ejecutamos el test de POST para el feed de temperatura 
+
+9. Estudiar / Explicar el programa [RTUTP_wifiAFIO_post_2_0.py](RTUTP_wifiAFIO_post_2_0.py)
+
+La peticion HTTP POST es algo mas compleja que get
+
+Veamos un ejemplo de HTTP post
+
+```
+POST /registro HTTP/1.1
+Host: www.ejemplo.com
+Content-Type: application/json
+Content-Length: 35
+
+{
+  "usuario": "paco",
+  "edad": 30
+}
+```
+
+La linera en blanco entre cabecera y cuerpo es obligatoria. El cuerpo en el método POST se utiliza para enviar la carga útil o datos reales al servidor (como archivos, imágenes o datos de un formulario).
+
+Con la libreria requests + ujson esto se simplifica. Un a vez conectados este seria el codigo minimo para hacer un post 
+
+```
+import requests
+import ujson
+ENCABEZADO = {'X-AIO-Key': secrets['AFIOT_KEY'], 'Content-Type': 'application/json'}
+NOMBREFEED = "dht11temperatura"
+temperatura = float(input('Di un valor de temperatura entre 0º y 50º'))
+Temp2d = {'value': round(temperatura, 2)} # componemos el body
+
+# 3.1 componemeos en 'end point'
+urlAFIO = "https://io.adafruit.com/api/v2/" + secrets['AFIOT_USERNAME'] + "/feeds/" + NOMBREFEED + "/data"
+respuesta = requests.post(urlAFIO, headers = ENCABEZADO, data=ujson.dumps(Temp2d))
+```
+
+Estudiemos el resto de [RTUTP_wifiAFIO_post_2_0.py](RTUTP_wifiAFIO_post_2_0.py), para ver que lo que añade es manejo del display y un manejo muy básico de los errores
+
+### Crear y Ejecutar un test de 2x Post adaptados a Humedad y Temperatura ( sin decimales) con adafruit IO - 1 x vez
+
+[RTUTP_wifiAFIO_postHT_2_0.py](RTUTP_wifiAFIO_postHT_2_0.py)
+
+### <u>Ejecutar el ejemplo 2 </u>: 'R2526_wifiAFIO_postDHT11_4_0.py' y ver como 'sube' la informacion de humedad y temperatura + manejo de errores
+
+#### Version 2_5 con bucle y manejo básico de errores
+
+Tomamos el progrma postHT y 
+
+1. Añadimos lectura del sensor DHT11
+
+2. Bucle de lectura del sensor cada 60 segundos
+
+3. Un manejo de errores HTTP muy básico con salida del bucle
+
+[R2526_wifiAFIO_postDHT11_2_5.py](R2526_wifiAFIO_postDHT11_2_5.py)
+
+#### Version 4_0 con bucle y manejo avanzado de errores
+
+[R2526_wifiAFIO_postDHT11_4_0.py](R2526_wifiAFIO_postDHT11_4_0.py)
+
+Maneja errores de forma compleja con estructura try-except para
+
+* Errores de conexión
+
+* Errores de sensor DHT11
+
+* Errores de orden requests (principalmente dirección de servidor errónea)
+
+* Salida por interrupción de Teclado
+
+y maneja errores de HTTP con 'if' por mensaje tanto en consola como en display
 
 ---
 

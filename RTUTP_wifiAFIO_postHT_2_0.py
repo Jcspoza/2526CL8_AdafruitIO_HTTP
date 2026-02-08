@@ -54,7 +54,7 @@ display.fill(0) # toda la pantalla en negro
 # PROGRAMA PRINCIPAL
 # 2- Nos conectamos a Internet
 # mostramos por el display que empieza la conexion al wifi
-display.text('T.Adaf.IO post', 0, 0, 1)
+display.text('AdafIO post HT', 0, 0, 1)
 display.show()
 # conectamos la Pico W / 2W a Internet
 ip = do_connect()
@@ -89,13 +89,15 @@ display.show()
 # Para volcar la respuesta hay que conocer su estructura -> ver la ayuda de la API
 
 if codigoRespuesta == 200:
-    pass
+    print(f'Ok de HTTP post Humedad codigo = {codigoRespuesta}')
 else:
+    print(f'Error HTTP Humedad : {respuesta.reason.decode('utf-8')}')
     display.fill(0)
     display.text('T.Adaf.IO post', 0, 0, 1)
     display.text(ip, 0, 10, 1)
-    display.text('Error de HTTP', 0, 30, 1)
-    display.text(respuesta.reason.decode('utf-8'), 0, 40, 1)
+    display.text('Error HTTP Hum', 0, 30, 1)
+    display.text(str(codigoRespuesta), 0, 40, 1)
+    display.text(respuesta.reason.decode('utf-8'), 0, 50, 1)
     display.show()
     
 # 5- Preguntamos el valor de POST a subir a Tempratura
@@ -123,12 +125,14 @@ display.show()
 # Para volcar la respuesta hay que conocer su estructura -> ver la ayuda de la API
 
 if codigoRespuesta == 200:
-    pass
+    print(f'Ok de HTTP post Temperatura codigo = {codigoRespuesta}')
 else:
+    print(f'Error HTTP Temperatura : {respuesta.reason.decode('utf-8')}')
     display.fill(0)
     display.text('T.Adaf.IO post', 0, 0, 1)
     display.text(ip, 0, 10, 1)
-    display.text('Error de HTTP', 0, 30, 1)
-    display.text(respuesta.reason.decode('utf-8'), 0, 40, 1)
+    display.text('Error HTTP Temp', 0, 30, 1)
+    display.text(str(codigoRespuesta), 0, 40, 1)
+    display.text(respuesta.reason.decode('utf-8'), 0, 50, 1)
     display.show()
 
