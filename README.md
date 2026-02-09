@@ -46,7 +46,7 @@ Mas poderoso es usar **servicios en al nube preconfigurados que permiten subir n
 
 ### Tutoriales resumen
 
-1. Servicio de Adafruit IO - darse de alta y configurar 
+1. **Servicio de Adafruit IO**- darse de alta y configurar 
    
    1.A) El tutorial de SF 
 
@@ -421,6 +421,14 @@ Maneja errores de forma compleja con estructura try-except para
 
 y maneja errores de HTTP con 'if' por mensaje tanto en consola como en display
 
+##### Recomendaciones de estudio
+
+* Para entender la estructura try-except recoiendo el Tutorial ( para pyhton) del libro de Python:
+
+[Excepciones en Python](https://ellibrodepython.com/excepciones-try-except-finally)
+
+* Una discusión interesantes es el orden de las estructuras de bucle y try-excep. Lee la sigueinte explicación de copilot : [while_try_order.pdf](./while_try_order.pdf)
+
 ---
 
 ## Preguntas sobre la Clase 8
@@ -431,4 +439,4 @@ Sección para que los alumnos pregunten sus dudas durante la clase
 
 ### TO DO :
 
-+ Ejemplo 3 sumando ejemplos 1 y 2 : control de color de neopixel y mostrar valores de temperatura y humedad
+Ejemplo 3 sumando ejemplos 1 y 2 : control de color de neopixel y mostrar valores de temperatura y humedad
